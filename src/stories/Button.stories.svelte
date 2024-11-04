@@ -1,11 +1,10 @@
 <script module>
 	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
-	import Button from './Button.svelte';
+	import { Button } from '$lib/components/index';
 	import { fn } from '@storybook/test';
 
-	// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 	const { Story } = defineMeta({
-		title: 'Example/Button',
+		title: 'Atoms/Button',
 		component: Button,
 		tags: ['autodocs'],
 		argTypes: {
@@ -15,11 +14,10 @@
 			}
 		},
 		args: {
-			label: 'Button',
-			primary: false,
+			primary: true,
 			size: 'medium',
-			onClick: fn(),
-			children: 'Hey hey!'
+			label: 'Verb',
+			onClick: fn()
 		}
 	});
 </script>
@@ -28,15 +26,12 @@
 	setTemplate(template);
 </script>
 
-{#snippet template({ children, ...args }: Args<typeof Story>)}
-	<Button {...args}>{children}</Button>
+{#snippet template({ ...args }: Args<typeof Story>)}
+	<Button {...args} />
 {/snippet}
 
-<!-- More on writing stories with args: https://storybook.js.org/docs/writing-stories/args -->
-<Story name="Primary" args={{ primary: true, label: 'Button' }} />
+<!-- It's not recommended to have more than one primary button per screen/area -->
+<Story name="Primary" args={{ primary: true, label: 'Verb' }} />
 
-<Story name="Secondary" args={{ label: 'Button' }} />
-
-<Story name="Large" args={{ size: 'large', label: 'Button' }} />
-
-<Story name="Small" args={{ size: 'small', label: 'Button' }} />
+<!-- Consider using a secondary button for more subtle actions -->
+<Story name="Secondary" args={{ primary: false, label: 'Verb' }} />
