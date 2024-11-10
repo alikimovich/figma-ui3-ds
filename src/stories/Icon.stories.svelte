@@ -4,7 +4,7 @@
 	import { IconComponent } from '$lib/icons';
 
 	const { Story } = defineMeta({
-		title: 'Atoms/Icon',
+		title: 'Design System/Atoms/Icon',
 		component: Icon,
 		tags: ['autodocs'],
 		argTypes: {
