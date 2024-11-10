@@ -1,21 +1,19 @@
 <script>
 	/**
 	 * @typedef {Object} Props
-	 * @property {boolean} [primary] Is this the principal call to action on the page?
+	 * @property {'primary' | 'secondary' | 'tertiary'} [type] Is this the principal call to action on the page?
 	 * @property {'small' | 'medium' | 'large'} [size] How large should the button be?
 	 * @property {string} label Button contents
 	 * @property {() => void} [onClick] The onclick event handler
 	 */
 
 	/** @type {Props} */
-	const { primary = false, size = 'medium', label, onClick } = $props();
+	const { type = 'primary', size = 'medium', label, onClick } = $props();
 </script>
 
 <button
 	type="button"
-	class={['button', `button--${size}`].join(' ')}
-	class:button--primary={primary}
-	class:button--secondary={!primary}
+	class={['button', `button--${size}`, `button--${type}`].join(' ')}
 	onclick={onClick}
 >
 	{label}
@@ -30,7 +28,7 @@
 		justify-content: center;
 		flex-shrink: 0;
 		text-align: center;
-		border: none;
+		border: 0 none;
 	}
 	.button--primary {
 		background-color: var(--figma-color-bg-brand);
@@ -65,6 +63,19 @@
 		background-color: var(--figma-color-bg-pressed);
 		transition: ease-out 0.1s outline-color;
 		transition: ease-out 0.1s background-color;
+	}
+	.button--tertiary {
+		background-color: transparent;
+		color: var(--figma-color-text);
+		outline: 1px solid transparent;
+		transition: ease-out 0.1s background-color;
+		outline-offset: -1px;
+		background-clip: padding-box;
+		box-sizing: border-box;
+	}
+	.button--tertiary:hover {
+		background-color: var(--figma-color-bg-secondary);
+		transition: ease-out 0.1s outline-color;
 	}
 	.button--small {
 		font-size: var(--text-body-small-font-size);

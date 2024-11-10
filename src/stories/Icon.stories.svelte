@@ -1,16 +1,26 @@
 <script module>
 	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
-	import { Icon } from '$lib/components/index';
-	import IconComponent from '$lib/icons/IconComponent.svelte';
+	import { Icon } from '$lib/components';
+	import { IconComponent } from '$lib/icons';
 
 	const { Story } = defineMeta({
 		title: 'Atoms/Icon',
 		component: Icon,
 		tags: ['autodocs'],
 		argTypes: {
+			iconName: {
+				type: 'object',
+				defaultValue: IconComponent
+			},
+			iconChar: {
+				control: { type: 'text' }
+			},
 			spin: {
 				control: { type: 'boolean' },
 				defaultValue: false
+			},
+			color: {
+				control: { type: 'color' }
 			}
 		}
 	});
@@ -21,11 +31,9 @@
 </script>
 
 {#snippet template({ ...args }: Args<typeof Story>)}
-	<Icon {...args}><IconComponent /></Icon>
+	<Icon iconName={IconComponent} {...args} />
 {/snippet}
 
-<!-- It's not recommended to have more than one primary button per screen/area -->
-<Story name="Spin" args={{ spin: false }} />
+<Story name="Static" args={{ spin: false }} />
 
-<!-- Consider using a secondary button for more subtle actions -->
-<Story name="Secondary" args={{ spin: true }} />
+<Story name="Spin" args={{ spin: true }} />

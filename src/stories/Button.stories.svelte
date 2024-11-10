@@ -1,6 +1,6 @@
 <script module>
 	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
-	import { Button } from '$lib/components/index';
+	import { Button } from '$lib/components';
 	import { fn } from '@storybook/test';
 
 	const { Story } = defineMeta({
@@ -8,13 +8,18 @@
 		component: Button,
 		tags: ['autodocs'],
 		argTypes: {
+			type: {
+				control: { type: 'select' },
+				options: ['primary', 'secondary', 'tertiary'],
+				defaultValue: 'primary'
+			},
 			size: {
 				control: { type: 'select' },
 				options: ['small', 'medium', 'large']
 			}
 		},
 		args: {
-			primary: true,
+			type: 'primary',
 			size: 'medium',
 			label: 'Verb',
 			onClick: fn()
@@ -30,8 +35,8 @@
 	<Button {...args} />
 {/snippet}
 
-<!-- It's not recommended to have more than one primary button per screen/area -->
-<Story name="Primary" args={{ primary: true, label: 'Verb' }} />
+<Story name="Primary" args={{ type: 'primary', label: 'Verb' }} />
 
-<!-- Consider using a secondary button for more subtle actions -->
-<Story name="Secondary" args={{ primary: false, label: 'Verb' }} />
+<Story name="Secondary" args={{ type: 'secondary', label: 'Verb' }} />
+
+<Story name="Tertiary" args={{ type: 'tertiary', label: 'Verb' }} />
