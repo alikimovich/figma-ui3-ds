@@ -10,11 +10,7 @@
 		"sourceMap": true,
 		"strict": true,
 		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
-		"baseUrl": ".",
-		"paths": {
-			"$lib/*": ["src/lib/*"]
-		}
+		"moduleResolution": "NodeNext"
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "src/**/*.svg"]
 }

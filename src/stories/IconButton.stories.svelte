@@ -1,7 +1,9 @@
 <script module>
-	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
-	import { IconButton } from '$lib/components';
-	import { IconComponent } from '$lib/icons';
+	import type { Args } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate } from '@storybook/addon-svelte-csf';
+
+	import { IconButton } from '$lib/components/index.js';
+	import { IconComponent } from '$lib/icons/index.js';
 	import { fn } from '@storybook/test';
 
 	const { Story } = defineMeta({
@@ -15,14 +17,12 @@
 				defaultValue: 'primary'
 			},
 			iconName: {
-				type: 'object',
 				defaultValue: 'IconComponent'
 			},
 			iconChar: {
 				control: { type: 'text' }
 			},
 			onClick: {
-				control: { type: 'function' },
 				defaultValue: fn()
 			}
 		}

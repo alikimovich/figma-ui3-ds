@@ -1,7 +1,9 @@
 <script module>
-	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
-	import { Icon } from '$lib/components';
-	import { IconComponent } from '$lib/icons';
+	import type { Args } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate } from '@storybook/addon-svelte-csf';
+
+	import { Icon } from '$lib/components/index.js';
+	import { IconComponent } from '$lib/icons/index.js';
 
 	const { Story } = defineMeta({
 		title: 'Design System/Atoms/Icon',
@@ -9,7 +11,6 @@
 		tags: ['autodocs'],
 		argTypes: {
 			iconName: {
-				type: 'object',
 				defaultValue: IconComponent
 			},
 			iconChar: {

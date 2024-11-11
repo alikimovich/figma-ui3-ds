@@ -1,7 +1,6 @@
 <script>
 	import Label from '$lib/components/Label/index.svelte';
 	import Icon from '$lib/components/Icon/index.svelte';
-	import { IconComponent } from '$lib/icons/index';
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} [value] Entered value
@@ -12,7 +11,7 @@
 	 * @property {boolean} [required] Is the field required?
 	 * @property {string} [error]
 	 * @property {string} [id]
-	 * @property {object} [iconName] The icon itself from the icon library
+	 * @property {string} [iconName] The svg icon itself from the icon library
 	 * @property {string} [iconChar] Can be a character instead of an icon
 	 */
 
@@ -35,7 +34,7 @@
 
 <div class="input-container flex column gap-sm">
 	{#if label}
-		<Label labelText={label} {inputId} />
+		<Label labelText="{label}{required ? '*' : ''}" {inputId} />
 	{/if}
 	<div
 		class="input-panel body-md flex row gap-sm align-items-center {iconName || iconChar

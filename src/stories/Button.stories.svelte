@@ -1,6 +1,8 @@
 <script module>
-	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
-	import { Button } from '$lib/components';
+	import type { Args } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate } from '@storybook/addon-svelte-csf';
+
+	import { Button } from '$lib/components/index.js';
 	import { fn } from '@storybook/test';
 
 	const { Story } = defineMeta({
@@ -16,6 +18,11 @@
 			size: {
 				control: { type: 'select' },
 				options: ['small', 'medium', 'large']
+			},
+			label: {
+				control: 'text',
+				defaultValue: 'Verb',
+				required: true
 			}
 		},
 		args: {

@@ -3,12 +3,12 @@
 	 * @typedef {Object} Props
 	 * @property {'primary' | 'secondary' | 'tertiary'} [type] Is this the principal call to action on the page?
 	 * @property {'small' | 'medium' | 'large'} [size] How large should the button be?
-	 * @property {string} label Button contents
+	 * @property {string} [label] Button contents
 	 * @property {() => void} [onClick] The onclick event handler
 	 */
 
 	/** @type {Props} */
-	let { type = 'primary', size = 'medium', label, onClick } = $props();
+	let { type = 'primary', size = 'medium', label = 'Verb', onClick } = $props();
 </script>
 
 <button

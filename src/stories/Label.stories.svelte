@@ -1,6 +1,8 @@
 <script module>
-	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
-	import { Label } from '$lib/components';
+	import type { Args } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate } from '@storybook/addon-svelte-csf';
+
+	import { Label } from '$lib/components/index.js';
 
 	const { Story } = defineMeta({
 		title: 'Design System/Atoms/Label',

@@ -1,7 +1,9 @@
 <script module>
-	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
-	import { TextInput } from '$lib/components';
-	import { IconComponent } from '$lib/icons';
+	import type { Args } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate } from '@storybook/addon-svelte-csf';
+
+	import { TextInput } from '$lib/components/index.js';
+	import { IconComponent } from '$lib/icons/index.js';
 
 	const { Story } = defineMeta({
 		title: 'Design System/Inputs/TextInput',
@@ -29,7 +31,8 @@
 				defaultValue: ''
 			},
 			iconName: {
-				type: 'object',
+				control: { type: 'select' },
+				options: [IconComponent, null],
 				defaultValue: IconComponent
 			},
 			iconChar: {
@@ -63,8 +66,7 @@
 	args={{
 		type: 'text',
 		required: false,
-		supportText: 'Field requirements',
-		iconName: IconComponent
+		supportText: 'Field requirements'
 	}}
 />
 
