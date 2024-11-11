@@ -1,15 +1,19 @@
 <script>
 	import Label from '$lib/components/Label/index.svelte';
+	import Icon from '$lib/components/Icon/index.svelte';
+	import { IconComponent } from '$lib/icons/index';
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} [value] Entered value
-	 * @property {string} [placeholder] Placeholder text. According NN/g using them is not recommended. Consider using a label instead or supporting text instead.
+	 * @property {string} [placeholder] Placeholder text. According to NN/g using them is not recommended. Consider using a label instead or supporting text instead.
 	 * @property {string} [supportText] Supporting text to help users understand the input field and it's requirements.
 	 * @property {string} [label] Label text, should be a noun
-	 * @property {'text' | 'password' | 'email' | 'number'} [type]
-	 * @property {boolean} [required]
+	 * @property {'text' | 'password' } [type]
+	 * @property {boolean} [required] Is the field required?
 	 * @property {string} [error]
 	 * @property {string} [id]
+	 * @property {object} [iconName] The icon itself from the icon library
+	 * @property {string} [iconChar] Can be a character instead of an icon
 	 */
 
 	/** @type {Props} */
@@ -21,66 +25,80 @@
 		type = 'text',
 		required = false,
 		error = '',
-		id = ''
+		id = '',
+		iconName,
+		iconChar = ''
 	} = $props();
 
 	const inputId = $derived(id || `input-${Math.random().toString(36).slice(2)}`);
 </script>
 
-<div class="input-container">
+<div class="input-container flex column gap-sm">
 	{#if label}
 		<Label labelText={label} {inputId} />
 	{/if}
-
-	<input
-		{type}
-		{placeholder}
-		{required}
-		id={inputId}
-		bind:value
-		class="text-input body-lg"
+	<div
+		class="input-panel body-md flex row gap-sm align-items-center {iconName || iconChar
+			? ''
+			: 'pl-md'}"
 		class:error
-		aria-invalid={!!error}
-		aria-describedby={error ? `${inputId}-error` : undefined}
-	/>
+	>
+		{#if iconName || iconChar}
+			<Icon {iconName} {iconChar} color="var(--figma-color-icon-secondary)" />
+		{/if}
+		<input
+			{type}
+			{placeholder}
+			{required}
+			id={inputId}
+			bind:value
+			class="text-input body-md"
+			aria-invalid={!!error}
+			aria-describedby={error ? `${inputId}-error` : undefined}
+		/>
+	</div>
 
-	{#if supportText}
-		<span class="support-text body-sm">{supportText}</span>
-	{:else if error}
+	{#if error}
 		<span class="error-message body-sm" id={`${inputId}-error`}>{error}</span>
+	{:else if supportText}
+		<span class="support-text body-sm">{supportText}</span>
 	{/if}
 </div>
 
 <style>
 	.input-container {
-		display: flex;
-		flex-direction: column;
-		gap: var(--spacer-sm);
 		width: 100%;
 	}
-
-	.text-input {
+	.input-panel {
 		border: 0 none;
 		background-color: var(--figma-color-bg-secondary);
-		padding: var(--spacer-md);
 		outline: 1px solid var(--figma-color-bg-secondary);
 		outline-offset: -1px;
 		border-radius: var(--radius-medium);
 		transition: outline 0.1s ease-out;
+		width: 100%;
+		height: 1.5rem;
 	}
 
-	.text-input:hover {
+	.input-panel:hover {
 		outline: 1px solid var(--figma-color-border);
-		transition: outline 0.1s ease-out;
 	}
 
-	.text-input:focus {
+	.input-panel:focus-within {
 		outline: 1px solid var(--figma-color-border-selected);
-		transition: outline 0.1s ease-out;
 	}
 
-	.text-input.error {
+	.input-panel.error {
 		outline: 1px solid var(--figma-color-border-danger-strong);
+	}
+
+	.text-input {
+		border: 0 none;
+		padding: 0;
+		height: 1.5rem;
+		background-color: transparent;
+		width: 100%;
+		outline: 0 none;
 	}
 
 	.error-message {

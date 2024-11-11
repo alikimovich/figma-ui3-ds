@@ -9,7 +9,7 @@
 	let { labelText, inputId } = $props();
 </script>
 
-<label class="body-md" for={inputId}>
+<label class="body-sm" for={inputId}>
 	{labelText}
 </label>
 
