@@ -10,7 +10,7 @@
 
 	/** @type {Props} */
 
-	const { type = 'primary', onClick, iconName, iconChar } = $props();
+	let { type = 'primary', onClick, iconName, iconChar } = $props();
 </script>
 
 <button type="button" class={['button', `icon-button--${type}`].join(' ')} onclick={onClick}>

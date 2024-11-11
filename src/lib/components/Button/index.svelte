@@ -8,7 +8,7 @@
 	 */
 
 	/** @type {Props} */
-	const { type = 'primary', size = 'medium', label, onClick } = $props();
+	let { type = 'primary', size = 'medium', label, onClick } = $props();
 </script>
 
 <button

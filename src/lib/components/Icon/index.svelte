@@ -8,7 +8,7 @@
 	 */
 
 	/** @type {Props} */
-	const { spin = false, iconChar, color = 'var(--figma-color-icon)', iconName } = $props();
+	let { spin = false, iconChar, color = 'var(--figma-color-icon)', iconName } = $props();
 </script>
 
 <div class={['icon', spin ? 'icon--spin' : ''].join(' ')} style="color: {color}; fill: {color}">
