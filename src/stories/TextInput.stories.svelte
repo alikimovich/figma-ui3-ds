@@ -7,16 +7,33 @@
 		component: TextInput,
 		tags: ['autodocs'],
 		argTypes: {
-			value: { control: { type: 'text' } },
-			placeholder: { control: { type: 'text' } },
 			label: { control: { type: 'text' } },
+			supportText: { control: { type: 'text' }, defaultValue: '' },
+			placeholder: {
+				control: { type: 'text' },
+				defaultValue: 'Placeholder texts are harmful'
+			},
+			required: {
+				control: 'boolean',
+				defaultValue: false
+			},
+			value: {
+				control: { type: 'text' },
+				efaultValue: ''
+			},
 			type: {
 				control: { type: 'select' },
 				options: ['text', 'password', 'email', 'number'],
 				defaultValue: 'text'
 			},
-			required: { control: { type: 'boolean' } },
 			error: { control: { type: 'text' } }
+		},
+		args: {
+			type: 'text',
+			label: 'Noun',
+			placeholder: 'Placeholder texts are harmful',
+			supportText: 'Field requirements',
+			required: false
 		}
 	});
 </script>
@@ -29,9 +46,6 @@
 	<TextInput {...args} />
 {/snippet}
 
-<Story name="Primary" args={{ type: 'text', label: 'Noun', placeholder: 'Placeholder' }} />
+<Story name="Primary" args={{ type: 'text' }} />
 
-<Story
-	name="Error"
-	args={{ type: 'text', label: 'Noun', placeholder: 'Placeholder', error: 'Error!' }}
-/>
+<Story name="Error" args={{ type: 'text', label: 'Noun', error: 'Error!' }} />

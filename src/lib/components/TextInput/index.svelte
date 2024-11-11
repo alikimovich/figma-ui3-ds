@@ -1,9 +1,11 @@
 <script>
+	import Label from '$lib/components/Label/index.svelte';
 	/**
 	 * @typedef {Object} Props
-	 * @property {string} [value]
-	 * @property {string} [placeholder]
-	 * @property {string} [label]
+	 * @property {string} [value] Entered value
+	 * @property {string} [placeholder] Placeholder text. According NN/g using them is not recommended. Consider using a label instead or supporting text instead.
+	 * @property {string} [supportText] Supporting text to help users understand the input field and it's requirements.
+	 * @property {string} [label] Label text, should be a noun
 	 * @property {'text' | 'password' | 'email' | 'number'} [type]
 	 * @property {boolean} [required]
 	 * @property {string} [error]
@@ -14,6 +16,7 @@
 	let {
 		value = $bindable(''),
 		placeholder = '',
+		supportText = '',
 		label = '',
 		type = 'text',
 		required = false,
@@ -26,7 +29,7 @@
 
 <div class="input-container">
 	{#if label}
-		<label for={inputId}>{label}</label>
+		<Label labelText={label} {inputId} />
 	{/if}
 
 	<input
@@ -41,8 +44,10 @@
 		aria-describedby={error ? `${inputId}-error` : undefined}
 	/>
 
-	{#if error}
-		<span class="error-message body-md" id={`${inputId}-error`}>{error}</span>
+	{#if supportText}
+		<span class="support-text body-sm">{supportText}</span>
+	{:else if error}
+		<span class="error-message body-sm" id={`${inputId}-error`}>{error}</span>
 	{/if}
 </div>
 
@@ -50,14 +55,8 @@
 	.input-container {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: var(--spacer-sm);
 		width: 100%;
-	}
-
-	label {
-		font-size: 0.875rem;
-		font-weight: 500;
-		color: #374151;
 	}
 
 	.text-input {
@@ -86,5 +85,9 @@
 
 	.error-message {
 		color: var(--figma-color-text-danger);
+	}
+
+	.support-text {
+		color: var(--figma-color-text-secondary);
 	}
 </style>
