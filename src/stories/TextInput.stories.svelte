@@ -1,6 +1,5 @@
 <script module>
-	import type { Args } from '@storybook/addon-svelte-csf';
-	import { defineMeta, setTemplate } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
 
 	import { TextInput } from '$lib/components/index.js';
 	import { IconComponent } from '$lib/icons/index.js';
@@ -40,7 +39,7 @@
 			},
 			type: {
 				control: { type: 'select' },
-				options: ['text', 'password'],
+				options: ['text', 'password', 'number'],
 				defaultValue: 'text'
 			},
 			error: { control: { type: 'text' } }

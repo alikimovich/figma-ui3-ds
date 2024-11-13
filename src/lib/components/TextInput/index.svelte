@@ -3,11 +3,11 @@
 	import Icon from '$lib/components/Icon/index.svelte';
 	/**
 	 * @typedef {Object} Props
-	 * @property {string} [value] Entered value
+	 * @property {any} [value] Entered value
 	 * @property {string} [placeholder] Placeholder text. According to NN/g using them is not recommended. Consider using a label instead or supporting text instead.
 	 * @property {string} [supportText] Supporting text to help users understand the input field and it's requirements.
 	 * @property {string} [label] Label text, should be a noun
-	 * @property {'text' | 'password' } [type]
+	 * @property {'text' | 'password' | 'number'  } [type]
 	 * @property {boolean} [required] Is the field required?
 	 * @property {string} [error]
 	 * @property {string} [id]
