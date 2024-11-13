@@ -1,6 +1,5 @@
 <script module>
-	import type { Args } from '@storybook/addon-svelte-csf';
-	import { defineMeta, setTemplate } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
 
 	import { IconButton } from '$lib/components/index.js';
 	import { IconComponent } from '$lib/icons/index.js';
