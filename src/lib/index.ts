@@ -1,5 +1,4 @@
-import styles from './global.module.css';
-
-export { styles };
+import './global.css';
 
 export * from './components/index.js';
+export * from './icons/index.js';
