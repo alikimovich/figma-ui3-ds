@@ -3,7 +3,7 @@
 	/**
 	 * @typedef {Object} Props
 	 * @property {'primary' | 'secondary' | 'tertiary'} [type] Is this the principal call to action on the page?
-	 * @property {string} [iconName] The icon itself from the icon library
+	 * @property {any} [iconName] The icon itself from the icon library
 	 * @property {() => void} [onClick] The onclick event handler
 	 * @property {string} [iconChar] The character to display instead of the icon
 	 */

@@ -1,7 +1,7 @@
 <script>
 	/**
 	 * @typedef {Object} Props
-	 * @property {string} [iconName] The svg icon itself from the icon library
+	 * @property {any} [iconName] The svg icon itself from the icon library
 	 * @property {string} [iconChar] Can be a character instead of an icon
 	 * @property {boolean} [spin] Should it spin? Useful for loaders
 	 * @property {string} [color] The color of the icon
@@ -15,7 +15,7 @@
 	{#if iconChar}
 		{iconChar}
 	{:else if iconName}
-		{@html iconName}
+		{@render iconName()}
 	{/if}
 </div>
 

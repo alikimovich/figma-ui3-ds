@@ -16,7 +16,7 @@
 				defaultValue: 'primary'
 			},
 			iconName: {
-				defaultValue: 'IconComponent'
+				defaultValue: IconComponent
 			},
 			iconChar: {
 				control: { type: 'text' }
