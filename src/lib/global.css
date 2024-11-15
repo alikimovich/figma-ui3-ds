@@ -586,6 +586,12 @@ a:focus {
 .gap-xl {
 	gap: var(--spacer-xl);
 }
+.gap-xxl {
+	gap: var(--spacer-xxl);
+}
+.gap-xxxl {
+	gap: var(--spacer-xxxl);
+}
 
 /* margin */
 .m-0 {
@@ -601,7 +607,13 @@ a:focus {
 	margin: var(--spacer-lg);
 }
 .m-xl {
-	margin: var(--spacer-lg);
+	margin: var(--spacer-xl);
+}
+.m-xxl {
+	margin: var(--spacer-xxl);
+}
+.m-xxxl {
+	margin: var(--spacer-xxxl);
 }
 
 .mx-0 {
@@ -621,8 +633,16 @@ a:focus {
 	margin-right: var(--spacer-lg);
 }
 .mx-xl {
-	margin-left: var(--spacer-lg);
-	margin-right: var(--spacer-lg);
+	margin-left: var(--spacer-xl);
+	margin-right: var(--spacer-xl);
+}
+.mx-xxl {
+	margin-left: var(--spacer-xxl);
+	margin-right: var(--spacer-xxl);
+}
+.mx-xxxl {
+	margin-left: var(--spacer-xxxl);
+	margin-right: var(--spacer-xxxl);
 }
 
 .my-0 {
@@ -642,8 +662,16 @@ a:focus {
 	margin-bottom: var(--spacer-lg);
 }
 .my-xl {
-	margin-top: var(--spacer-lg);
-	margin-bottom: var(--spacer-lg);
+	margin-top: var(--spacer-xl);
+	margin-bottom: var(--spacer-xl);
+}
+.my-xxl {
+	margin-top: var(--spacer-xxl);
+	margin-bottom: var(--spacer-xxl);
+}
+.my-xxxl {
+	margin-top: var(--spacer-xxxl);
+	margin-bottom: var(--spacer-xxxl);
 }
 
 .mt-0 {
@@ -659,7 +687,13 @@ a:focus {
 	margin-top: var(--spacer-lg);
 }
 .mt-xl {
-	margin-top: var(--spacer-lg);
+	margin-top: var(--spacer-xl);
+}
+.mt-xxl {
+	margin-top: var(--spacer-xxl);
+}
+.mt-xxxl {
+	margin-top: var(--spacer-xxxl);
 }
 
 .mb-0 {
@@ -675,7 +709,13 @@ a:focus {
 	margin-bottom: var(--spacer-lg);
 }
 .mb-xl {
-	margin-bottom: var(--spacer-lg);
+	margin-bottom: var(--spacer-xl);
+}
+.mb-xxl {
+	margin-bottom: var(--spacer-xxl);
+}
+.mb-xxxl {
+	margin-bottom: var(--spacer-xxxl);
 }
 
 .ml-0 {
@@ -691,7 +731,13 @@ a:focus {
 	margin-left: var(--spacer-lg);
 }
 .ml-xl {
-	margin-left: var(--spacer-lg);
+	margin-left: var(--spacer-xl);
+}
+.ml-xxl {
+	margin-left: var(--spacer-xxl);
+}
+.ml-xxxl {
+	margin-left: var(--spacer-xxxl);
 }
 
 .mr-0 {
@@ -707,7 +753,13 @@ a:focus {
 	margin-right: var(--spacer-lg);
 }
 .mr-xl {
-	margin-right: var(--spacer-lg);
+	margin-right: var(--spacer-xl);
+}
+.mr-xxl {
+	margin-right: var(--spacer-xxl);
+}
+.mr-xxxl {
+	margin-right: var(--spacer-xxxl);
 }
 
 /* padding */
@@ -724,7 +776,13 @@ a:focus {
 	padding: var(--spacer-lg);
 }
 .p-xl {
-	padding: var(--spacer-lg);
+	padding: var(--spacer-xl);
+}
+.p-xxl {
+	padding: var(--spacer-xxl);
+}
+.p-xxxl {
+	padding: var(--spacer-xxxl);
 }
 
 .py-0 {
@@ -744,8 +802,16 @@ a:focus {
 	padding-bottom: var(--spacer-lg);
 }
 .py-xl {
-	padding-top: var(--spacer-lg);
-	padding-bottom: var(--spacer-lg);
+	padding-top: var(--spacer-xl);
+	padding-bottom: var(--spacer-xl);
+}
+.py-xxl {
+	padding-top: var(--spacer-xxl);
+	padding-bottom: var(--spacer-xxl);
+}
+.py-xxxl {
+	padding-top: var(--spacer-xxxl);
+	padding-bottom: var(--spacer-xxxl);
 }
 
 .px-0 {
@@ -765,8 +831,16 @@ a:focus {
 	padding-right: var(--spacer-lg);
 }
 .px-xl {
-	padding-left: var(--spacer-lg);
-	padding-right: var(--spacer-lg);
+	padding-left: var(--spacer-xl);
+	padding-right: var(--spacer-xl);
+}
+.px-xxl {
+	padding-left: var(--spacer-xxl);
+	padding-right: var(--spacer-xxl);
+}
+.px-xxxl {
+	padding-left: var(--spacer-xxxl);
+	padding-right: var(--spacer-xxxl);
 }
 
 .pt-0 {
@@ -782,7 +856,13 @@ a:focus {
 	padding-top: var(--spacer-lg);
 }
 .pt-xl {
-	padding-top: var(--spacer-lg);
+	padding-top: var(--spacer-xl);
+}
+.pt-xxl {
+	padding-top: var(--spacer-xxl);
+}
+.pt-xxxl {
+	padding-top: var(--spacer-xxxl);
 }
 
 .pb-0 {
@@ -798,7 +878,13 @@ a:focus {
 	padding-bottom: var(--spacer-lg);
 }
 .pb-xl {
-	padding-bottom: var(--spacer-lg);
+	padding-bottom: var(--spacer-xl);
+}
+.pb-xxl {
+	padding-bottom: var(--spacer-xxl);
+}
+.pb-xxxl {
+	padding-bottom: var(--spacer-xxxl);
 }
 
 .pl-0 {
@@ -814,7 +900,13 @@ a:focus {
 	padding-left: var(--spacer-lg);
 }
 .pl-xl {
-	padding-left: var(--spacer-lg);
+	padding-left: var(--spacer-xl);
+}
+.pl-xxl {
+	padding-left: var(--spacer-xxl);
+}
+.pl-xxxl {
+	padding-left: var(--spacer-xxxl);
 }
 
 .pr-0 {
@@ -830,7 +922,13 @@ a:focus {
 	padding-right: var(--spacer-lg);
 }
 .pr-xl {
-	padding-right: var(--spacer-lg);
+	padding-right: var(--spacer-xl);
+}
+.pr-xxl {
+	padding-right: var(--spacer-xxl);
+}
+.pr-xxxl {
+	padding-right: var(--spacer-xxxl);
 }
 
 /* Misc */

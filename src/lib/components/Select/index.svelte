@@ -3,11 +3,10 @@
 	import Icon from '$lib/components/Icon/index.svelte';
 	/**
 	 * @typedef {Object} Props
-	 * @property {any} [value] Entered value
-	 * @property {string} [placeholder] Placeholder text. According to NN/g using them is not recommended. Consider using a label instead or supporting text instead.
+	 * @property {any} [value] Selected value
+	 * @property {{value: any, label: string}[]} [options] Array of options
 	 * @property {string} [supportText] Supporting text to help users understand the input field and it's requirements.
 	 * @property {string} [label] Label text, should be a noun
-	 * @property {'text' | 'password' | 'number'  } [type]
 	 * @property {boolean} [required] Is the field required?
 	 * @property {string} [error]
 	 * @property {string} [id]
@@ -18,10 +17,14 @@
 	/** @type {Props} */
 	let {
 		value = $bindable(''),
-		placeholder = '',
 		supportText = '',
 		label = '',
-		type = 'text',
+		options = [
+			{ value: '', label: 'Select an option' },
+			{ value: 'coffee', label: 'Coffee' },
+			{ value: 'tea', label: 'Tea' },
+			{ value: 'water', label: 'Water' }
+		],
 		required = false,
 		error = '',
 		id = '',
@@ -32,27 +35,31 @@
 	const inputId = $derived(id || `input-${Math.random().toString(36).slice(2)}`);
 </script>
 
-<div class="input-container flex column gap-sm">
+<div class="select-container flex column gap-sm">
 	{#if label}
 		<Label labelText="{label}{required ? '*' : ''}" {inputId} />
 	{/if}
 	<div
-		class="input-panel body-md flex row align-items-center {iconName || iconChar ? '' : 'pl-md'}"
+		class="select-panel body-md flex row align-items-center {iconName || iconChar ? '' : 'pl-md'}"
 		class:error
 	>
 		{#if iconName || iconChar}
-			<Icon {iconName} {iconChar} color="var(--figma-color-icon-secondary)" />
+			<div class="select-icon">
+				<Icon {iconName} {iconChar} color="var(--figma-color-icon-secondary)" />
+			</div>
 		{/if}
-		<input
-			{type}
-			{placeholder}
+		<select
 			{required}
 			id={inputId}
 			bind:value
-			class="text-input body-md"
+			class="select-input body-md"
 			aria-invalid={!!error}
 			aria-describedby={error ? `${inputId}-error` : undefined}
-		/>
+		>
+			{#each options as option}
+				<option value={option.value}>{option.label}</option>
+			{/each}
+		</select>
 	</div>
 
 	{#if error}
@@ -63,10 +70,10 @@
 </div>
 
 <style>
-	.input-container {
+	.select-container {
 		width: 100%;
 	}
-	.input-panel {
+	.select-panel {
 		border: 0 none;
 		background-color: var(--figma-color-bg-secondary);
 		outline: 1px solid var(--figma-color-bg-secondary);
@@ -76,20 +83,25 @@
 		width: 100%;
 		height: 1.5rem;
 	}
-
-	.input-panel:hover {
+	/* .select-icon {
+		position: absolute;
+	} */
+	.select-panel:hover {
 		outline: 1px solid var(--figma-color-border);
 	}
 
-	.input-panel:focus-within {
+	.select-panel:focus-within {
 		outline: 1px solid var(--figma-color-border-selected);
 	}
 
-	.input-panel.error {
+	.select-panel.error {
 		outline: 1px solid var(--figma-color-border-danger-strong);
 	}
 
-	.text-input {
+	.select-input {
+		--webkit-appearance: none;
+		--moz-appearance: none;
+		appearance: none;
 		border: 0 none;
 		padding: 0;
 		height: 1.5rem;
