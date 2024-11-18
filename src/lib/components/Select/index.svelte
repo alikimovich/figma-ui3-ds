@@ -1,6 +1,7 @@
 <script>
 	import Label from '$lib/components/Label/index.svelte';
 	import Icon from '$lib/components/Icon/index.svelte';
+	import { IconSelectChevronDown } from '$lib/icons/index.ts';
 	/**
 	 * @typedef {Object} Props
 	 * @property {any} [value] Selected value
@@ -39,12 +40,9 @@
 	{#if label}
 		<Label labelText="{label}{required ? '*' : ''}" {inputId} />
 	{/if}
-	<div
-		class="select-panel body-md flex row align-items-center {iconName || iconChar ? '' : 'pl-md'}"
-		class:error
-	>
+	<div class="select-panel body-md flex row align-items-center" class:error>
 		{#if iconName || iconChar}
-			<div class="select-icon">
+			<div>
 				<Icon {iconName} {iconChar} color="var(--figma-color-icon-secondary)" />
 			</div>
 		{/if}
@@ -52,7 +50,7 @@
 			{required}
 			id={inputId}
 			bind:value
-			class="select-input body-md"
+			class="select-input body-md {iconName || iconChar ? '' : 'ml-md'}"
 			aria-invalid={!!error}
 			aria-describedby={error ? `${inputId}-error` : undefined}
 		>
@@ -60,6 +58,9 @@
 				<option value={option.value}>{option.label}</option>
 			{/each}
 		</select>
+		<div class="select-icon">
+			<Icon iconName={IconSelectChevronDown} {iconChar} color="var(--figma-color-icon-secondary)" />
+		</div>
 	</div>
 
 	{#if error}
@@ -82,10 +83,14 @@
 		transition: outline 0.1s ease-out;
 		width: 100%;
 		height: 1.5rem;
+		position: relative;
 	}
-	/* .select-icon {
+	.select-icon {
 		position: absolute;
-	} */
+		width: 1.5rem;
+		right: 0;
+		pointer-events: none;
+	}
 	.select-panel:hover {
 		outline: 1px solid var(--figma-color-border);
 	}

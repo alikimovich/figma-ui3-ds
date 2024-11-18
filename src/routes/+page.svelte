@@ -1,5 +1,5 @@
 <script>
-	import { styles, Button } from '$lib/index.js';
+	import { styles, Button } from '$lib/index.ts';
 </script>
 
 <h1>Welcome to your library project</h1>
