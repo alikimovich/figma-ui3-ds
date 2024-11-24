@@ -1,6 +1,10 @@
 {
-	"name": "figma-ui3-ds",
-	"version": "0.0.7",
+	"name": "@alikimovich/figma-ui3-ds",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/alikimovich/figma-ui3-ds.git"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
