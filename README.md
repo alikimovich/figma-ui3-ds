@@ -10,6 +10,14 @@
 ### Usage
 
 If you want to use it in your project, run
-`npm install @alikimovich/figma-ui3-ds@0.0.1`
+
+```bash
+npm install @alikimovich/figma-ui3-ds@0.0.1
+
+```
+
 or
-`bun add @alikimovich/figma-ui3-ds@0.0.1`
+
+```bash
+bun add @alikimovich/figma-ui3-ds@0.0.1
+```
