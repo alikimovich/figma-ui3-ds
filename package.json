@@ -1,73 +1,70 @@
 {
-  "name": "@alikimovich/figma-ui3-ds",
-  "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alikimovich/figma-ui3-ds.git"
-  },
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build && npm run package",
-    "preview": "vite preview",
-    "package": "svelte-kit sync && svelte-package && publint",
-    "prepublishOnly": "npm run package",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "format": "prettier --write .",
-    "lint": "prettier --check . && eslint .",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "files": [
-    "dist",
-    "!dist/**/*.test.*",
-    "!dist/**/*.spec.*"
-  ],
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "svelte": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
-    }
-  },
-  "peerDependencies": {
-    "svelte": "^5.0.0"
-  },
-  "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.2",
-    "@storybook/addon-essentials": "^8.4.1",
-    "@storybook/addon-interactions": "^8.4.1",
-    "@storybook/addon-svelte-csf": "^5.0.0-next.10",
-    "@storybook/blocks": "^8.4.1",
-    "@storybook/svelte": "^8.4.1",
-    "@storybook/sveltekit": "^8.4.1",
-    "@storybook/test": "^8.4.1",
-    "@sveltejs/adapter-auto": "^3.0.0",
-    "@sveltejs/kit": "^2.0.0",
-    "@sveltejs/package": "^2.0.0",
-    "@sveltejs/vite-plugin-svelte": "^4.0.0",
-    "@types/eslint": "^9.6.0",
-    "eslint": "^9.7.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-svelte": "^2.36.0",
-    "globals": "^15.0.0",
-    "prettier": "^3.3.2",
-    "prettier-plugin-svelte": "^3.2.6",
-    "publint": "^0.2.0",
-    "storybook": "^8.4.1",
-    "svelte": "^5.0.0",
-    "svelte-check": "^4.0.0",
-    "typescript": "^5.0.0",
-    "typescript-eslint": "^8.0.0",
-    "vite": "^5.0.11",
-    "@types/css-modules": "^1.0.5"
-  },
-  "dependencies": {
-    "@figma/code-connect": "^1.2.2"
-  }
+	"name": "@alikimovich/figma-ui3-ds",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/alikimovich/figma-ui3-ds.git"
+	},
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && npm run package",
+		"preview": "vite preview",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "npm run package",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
+	},
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
+	"devDependencies": {
+		"@chromatic-com/storybook": "^3.2.2",
+		"@storybook/addon-essentials": "^8.4.1",
+		"@storybook/addon-interactions": "^8.4.1",
+		"@storybook/addon-svelte-csf": "^5.0.0-next.10",
+		"@storybook/blocks": "^8.4.1",
+		"@storybook/svelte": "^8.4.1",
+		"@storybook/sveltekit": "^8.4.1",
+		"@storybook/test": "^8.4.1",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/package": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"@types/css-modules": "^1.0.5",
+		"@types/eslint": "^9.6.0",
+		"eslint": "^9.7.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.36.0",
+		"globals": "^15.0.0",
+		"prettier": "^3.3.2",
+		"prettier-plugin-svelte": "^3.2.6",
+		"publint": "^0.2.0",
+		"storybook": "^8.4.1",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"typescript": "^5.0.0",
+		"typescript-eslint": "^8.0.0",
+		"vite": "^5.0.11"
+	}
 }
