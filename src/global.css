@@ -194,6 +194,7 @@
 	--text-body-large-line-height: 1.375rem;
 	--text-body-large-strong-font-family: var(--font-family-default);
 	--text-body-large-strong-font-size: 0.8125rem;
+	--text-body-large-strong-font-weight: var(--font-weight-strong);
 	--text-body-large-strong-letter-spacing: -0.002rem;
 	--text-body-large-strong-line-height: 1.375rem;
 	--text-body-medium-font-family: var(--font-family-default);
